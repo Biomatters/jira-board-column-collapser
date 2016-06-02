@@ -1,0 +1,25 @@
+{
+  "name": "Jira board column collapser",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Hides empty columns on boards in Jira",
+  "homepage_url": "https://github.com/Biomatters/jira-board-column-collapser",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+          "*://*.atlassian.net/secure/RapidBoard.jspa*"
+      ],
+      "js": [
+        "main.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "*://*.atlassian.net/secure/RapidBoard.jspa*", "tabs", "webNavigation"
+  ]
+}
