@@ -24,7 +24,7 @@ function init() {
 function updateUi() {
     headers().forEach(header => {
         let id = header.dataset.id;
-        let display = (dragInProgress(id) || columnHasIssues(id)) ? '' : 'none';
+        let display = (dragInProgress() || columnHasIssues(id)) ? '' : 'none';
 
         header.style.display = display;
         cells(id).forEach(cell => cell.style.display = display);
@@ -47,7 +47,7 @@ function columnHasIssues(id) {
     return issues(id).length > 0;
 }
 
-function dragInProgress(id) {
+function dragInProgress() {
     return select('div.ghx-swimlane.ghx-drag-in-progress').length > 0
 }
 
