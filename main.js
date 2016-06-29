@@ -40,7 +40,7 @@ function cells(id, suffix = '') {
 }
 
 function issues(id) {
-    return cells(id, '> *');
+    return cells(id, '[data-issue-key]');
 }
 
 function columnHasIssues(id) {
